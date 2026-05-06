@@ -1,6 +1,6 @@
 ## 주제 : COVID-19 X-ray 이미지 분류 모델
 
-이 프로젝트는 흉부 X-ray 이미지를 활용하여 COVID-19 폐렴(Pneumonia)을 진단하는 딥러닝 모델을 개발하는 것을 목표로 합니다.
+이 프로젝트는 흉부 X-ray 이미지를 활용하여 COVID-19 폐렴(Pneumonia)을 진단하는 딥러닝 모델을 개발하는 것을 목표로 합니다.  
 링크 : https://www.kaggle.com/datasets/khoongweihao/covid19-xray-dataset-train-test-sets/data
 
 ### 1. 데이터셋
@@ -30,7 +30,7 @@ Kagglehub에서 제공하는 'COVID-19 X-ray Dataset'을 사용했습니다. 이
 *   **평가 지표**: `accuracy` (정확도), `Precision` (정밀도), `Recall` (재현율)을 모니터링했습니다.
 *   **콜백**: 학습 과정의 효율성을 높이기 위해 `EarlyStopping` (3 에포크 동안 검증 손실 개선이 없으면 중단)과 `ModelCheckpoint` (최고 성능 모델 저장)를 사용했습니다.
 
-#### 학습 결과 (제공된 로그 기준)
+#### 학습 결과
 
 | Epoch | Accuracy | Loss | Precision | Recall | Val_Accuracy | Val_Loss | Val_Precision | Val_Recall |
 |-------|----------|------|-----------|--------|--------------|----------|---------------|------------|
@@ -64,6 +64,16 @@ weighted avg       0.93      0.93      0.92        40
 ```
 [[18  2]
  [ 1 19]]
+```
+
+### 6. 실행 방법(우분투 환경)  
+```
+# 파이썬 가상환경에서
+pip install -r requirements.txt 
+python launch_gradio.py
+
+# gradio
+images의 폴더의 Test용 사진 Noraml 2장, SARS-..., strep...로 표기된 covid 이미지로 인터페이스에서 시현해봅니다.
 ```
 
 ### 6. Gradio를 이용한 모델 배포
